@@ -4,4 +4,4 @@ This project showcase the use of [google_maps_directions package](https://pub.de
 
 ## DEMO
 
-![Distance Between](demo/distance.gif)
+* ![Directions](demo/directions.gif)

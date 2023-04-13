@@ -90,6 +90,10 @@ class _StepListTile extends StatelessWidget {
         ListTile(
           leading: _NavigationIcon(step.maneuver ?? ""),
           title: HtmlWidget(step.htmlInstructions),
+          subtitle: step.maneuver == null
+              ? null
+              : Text("${step.distance.text} - ${step.duration.text}"),
+
           /* title: Text(
             parse(step.htmlInstructions).body!.text,
             style: const TextStyle(fontSize: 17),
