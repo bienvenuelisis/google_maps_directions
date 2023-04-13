@@ -7,8 +7,8 @@ import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
 
-import 'geocoded_way_point.dart';
-import 'route.dart';
+import 'direction_geocoded_way_point.dart';
+import 'direction_route.dart';
 
 Directions directionsFromJson(String str) =>
     Directions.fromJson(json.decode(str));
@@ -23,15 +23,16 @@ class Directions extends Equatable {
   });
 
   factory Directions.fromJson(Map<String, dynamic> json) => Directions(
-        geocodedWaypoints: List<GeocodedWaypoint>.from(
+        geocodedWaypoints: List<DirectionGeocodedWaypoint>.from(
             json["geocoded_waypoints"]
-                .map((x) => GeocodedWaypoint.fromJson(x))),
-        routes: List<Route>.from(json["routes"].map((x) => Route.fromJson(x))),
+                .map((x) => DirectionGeocodedWaypoint.fromJson(x))),
+        routes: List<DirectionRoute>.from(
+            json["routes"].map((x) => DirectionRoute.fromJson(x))),
         status: json["status"],
       );
 
-  final List<GeocodedWaypoint> geocodedWaypoints;
-  final List<Route> routes;
+  final List<DirectionGeocodedWaypoint> geocodedWaypoints;
+  final List<DirectionRoute> routes;
   final String status;
 
   @override
@@ -41,14 +42,14 @@ class Directions extends Equatable {
   bool get stringify => true;
 
   bool get ok => status.toUpperCase() == "OK";
-  Route get shortestRoute => (routes
+  DirectionRoute get shortestRoute => (routes
         ..sort((r1, r2) => r1.shortestLeg.distanceInMeters
             .compareTo(r2.shortestLeg.distanceInMeters)))
       .first;
 
   Directions copyWith({
-    List<GeocodedWaypoint>? geocodedWaypoints,
-    List<Route>? routes,
+    List<DirectionGeocodedWaypoint>? geocodedWaypoints,
+    List<DirectionRoute>? routes,
     String? status,
   }) =>
       Directions(

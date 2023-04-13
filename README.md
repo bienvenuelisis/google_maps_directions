@@ -11,19 +11,20 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-# Calculate distances, durations & Get shortest route/leg between two points with Google_Maps Directions API
+# Get directions shortest route/leg between two points & calculate distances, durations with Google_Maps Directions API
+
+Documentation française accessible [ici](https://github.com/bienvenuelisis/google_maps_directions/blob/main/README-FR.md).
 
 ## Features
 
-- Calculate distance (corresponding to shortest route distance evaluation) between two points.
-- Get shortest route between two points.
-- Get shortest leg between two points.
-- Sort points (destinations) by distance from uniq origin.
+- Get directions between two points.
+- Calculate distance or duration (corresponding to shortest route distance /duration evaluation) between two points.
+- Get shortest route between/leg two points.
 
 ## Getting started
 
-- Point : Object with latitude and longitude.
-- Route : Path on foot, motorcycle, car between two points.
+- AddressPoint : Object with latitude and longitude.
+- DirectionRoute : Path on foot, motorcycle, train, or car between two points.
 
 ## Usage
 
@@ -35,6 +36,79 @@ const String googleAPIKey = "GOOGLE_API_KEY";
 //You can init the Package with this API_Key so you don't have to pass it as an argument to it's methods.
 
 GoogleMapsDirections.init(googleAPIKey: googleAPIKey);
+```
+
+### Directions
+
+```dart
+import "package:google_maps_directions/google_maps_directions.dart" as gmd;
+
+...
+
+Directions directions = await getDirections(
+        p1.lat,
+        p1.lng,
+        p2.lat,
+        p2.lng,
+        language: "fr_FR",
+      );
+
+DirectionRoute route = directions.shortestRoute;
+
+```
+
+You can draw a route between the two addresses on a Map using [google_maps_flutter](https://pub.dev/packages/google_maps_flutter) and [flutter_polyline_points](https://pub.dev/packages/flutter_polyline_points) packages.
+
+```dart
+import 'package:flutter_polyline_points/flutter_polyline_points.dart';
+import 'package:google_maps_directions/google_maps_directions.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+...
+
+DirectionRoute route = directions.shortestRoute;
+
+List<LatLng> points = PolylinePoints().decodePolyline(route.overviewPolyline.points)
+   .map((point) => LatLng(point.latitude, point.longitude))
+                 .toList();
+
+List<Polyline> polylines = [
+ Polyline(
+            width: 5,
+            polylineId: PolylineId("UNIQUE_ROUTE_ID"),
+            color: Colors.green,
+            points: points,
+          ),
+];
+
+...
+
+@override
+ Widget build(BuildContext context) {
+    return Scaffold(
+ body : GoogleMap(
+              polylines: Set.of(polylines),
+              ...
+            ),
+       );
+}
+
+```
+
+You can also give indications for each stage of a route. A more complete demonstration is provided in [example directory](github.dev/bienvenuelisis/google_maps_directions/tree/main/example).
+
+```dart
+import 'package:google_maps_directions/google_maps_directions.dart';
+
+... 
+
+
+DirectionRoute route = directions.shortestRoute;
+
+DirectionLegStep firstRouteLegStep = route.shortestLeg.steps.first;
+print(firstRouteLegStep.htmlInstructions); //At the roundabout, take the exit onto route National 1.
+print(firstRouteLegStep.maneuver); //roundabout-right.
+
 ```
 
 ### Distance
@@ -60,3 +134,7 @@ int seconds = durationBetween.seconds//await gmd.durationInSeconds(9.2460524, 1.
 
 String durationInMinutesOrHours = gmd.durationBetween.text // await gmd.durationText(9.2460524, 1.2144565, 6.1271617, 1.2345417, googleAPIKey : googleAPIKey);
 ```
+
+## Issues | Features requests
+
+Feel free to submit issues, suggestions or features requests on this [package issues tracker](https://github.com/bienvenuelisis/google_maps_directions/issues).

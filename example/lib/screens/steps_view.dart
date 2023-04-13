@@ -1,6 +1,6 @@
 import 'package:example/utils/extensions/context.dart';
 import 'package:example/utils/extensions/widgets.dart';
-import 'package:flutter/material.dart' hide Route, Step;
+import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:google_maps_directions/google_maps_directions.dart';
 
@@ -10,7 +10,7 @@ class RouteStepsView extends StatelessWidget {
     required this.route,
   });
 
-  final Route route;
+  final DirectionRoute route;
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +81,7 @@ class RouteStepsView extends StatelessWidget {
 class _StepListTile extends StatelessWidget {
   const _StepListTile(this.step);
 
-  final LegStep step;
+  final DirectionLegStep step;
 
   @override
   Widget build(BuildContext context) {

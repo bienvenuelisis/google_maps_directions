@@ -1,13 +1,15 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
 
-class Point extends Equatable {
-  const Point({
+import 'address_point_mixin.dart';
+
+class AddressPoint extends Equatable with AddressPointMixin {
+  const AddressPoint({
     required this.lat,
     required this.lng,
   });
 
-  factory Point.fromJson(Map<String, dynamic> json) => Point(
+  factory AddressPoint.fromJson(Map<String, dynamic> json) => AddressPoint(
         lat: json["lat"]?.toDouble(),
         lng: json["lng"]?.toDouble(),
       );
@@ -21,11 +23,11 @@ class Point extends Equatable {
   @override
   bool get stringify => true;
 
-  Point copyWith({
+  AddressPoint copyWith({
     double? lat,
     double? lng,
   }) =>
-      Point(
+      AddressPoint(
         lat: lat ?? this.lat,
         lng: lng ?? this.lng,
       );

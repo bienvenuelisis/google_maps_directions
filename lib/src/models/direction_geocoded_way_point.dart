@@ -1,15 +1,15 @@
 import 'package:equatable/equatable.dart';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-class GeocodedWaypoint extends Equatable {
-  const GeocodedWaypoint({
+class DirectionGeocodedWaypoint extends Equatable {
+  const DirectionGeocodedWaypoint({
     required this.geocoderStatus,
     required this.placeId,
     required this.types,
   });
 
-  factory GeocodedWaypoint.fromJson(Map<String, dynamic> json) =>
-      GeocodedWaypoint(
+  factory DirectionGeocodedWaypoint.fromJson(Map<String, dynamic> json) =>
+      DirectionGeocodedWaypoint(
         geocoderStatus: json["geocoder_status"],
         placeId: json["place_id"],
         types: List<String>.from(json["types"].map((x) => x)),
@@ -25,12 +25,12 @@ class GeocodedWaypoint extends Equatable {
   @override
   bool get stringify => true;
 
-  GeocodedWaypoint copyWith({
+  DirectionGeocodedWaypoint copyWith({
     String? geocoderStatus,
     String? placeId,
     List<String>? types,
   }) =>
-      GeocodedWaypoint(
+      DirectionGeocodedWaypoint(
         geocoderStatus: geocoderStatus ?? this.geocoderStatus,
         placeId: placeId ?? this.placeId,
         types: types ?? this.types,

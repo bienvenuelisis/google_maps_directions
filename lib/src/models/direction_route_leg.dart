@@ -1,13 +1,13 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
 
+import 'address_point.dart';
+import 'direction_leg_step.dart';
 import 'distance_value.dart';
 import 'duration_value.dart';
-import 'leg_step.dart';
-import 'point.dart';
 
-class Leg extends Equatable {
-  const Leg({
+class DirectionRouteLeg extends Equatable {
+  const DirectionRouteLeg({
     required this.distance,
     required this.duration,
     required this.endAddress,
@@ -19,15 +19,16 @@ class Leg extends Equatable {
     required this.viaWaypoint,
   });
 
-  factory Leg.fromJson(Map<String, dynamic> json) => Leg(
+  factory DirectionRouteLeg.fromJson(Map<String, dynamic> json) =>
+      DirectionRouteLeg(
         distance: DistanceValue.fromJson(json["distance"]),
         duration: DurationValue.fromJson(json["duration"]),
         endAddress: json["end_address"],
-        endLocation: Point.fromJson(json["end_location"]),
+        endLocation: AddressPoint.fromJson(json["end_location"]),
         startAddress: json["start_address"],
-        startLocation: Point.fromJson(json["start_location"]),
-        steps:
-            List<LegStep>.from(json["steps"].map((x) => LegStep.fromJson(x))),
+        startLocation: AddressPoint.fromJson(json["start_location"]),
+        steps: List<DirectionLegStep>.from(
+            json["steps"].map((x) => DirectionLegStep.fromJson(x))),
         trafficSpeedEntry:
             List<dynamic>.from(json["traffic_speed_entry"].map((x) => x)),
         viaWaypoint: List<dynamic>.from(json["via_waypoint"].map((x) => x)),
@@ -36,10 +37,10 @@ class Leg extends Equatable {
   final DistanceValue distance;
   final DurationValue duration;
   final String endAddress;
-  final Point endLocation;
+  final AddressPoint endLocation;
   final String startAddress;
-  final Point startLocation;
-  final List<LegStep> steps;
+  final AddressPoint startLocation;
+  final List<DirectionLegStep> steps;
   final List<dynamic> trafficSpeedEntry;
   final List<dynamic> viaWaypoint;
 
@@ -63,18 +64,18 @@ class Leg extends Equatable {
 
   int get distanceInMeters => distance.meters;
 
-  Leg copyWith({
+  DirectionRouteLeg copyWith({
     DistanceValue? distance,
     DurationValue? duration,
     String? endAddress,
-    Point? endLocation,
+    AddressPoint? endLocation,
     String? startAddress,
-    Point? startLocation,
-    List<LegStep>? steps,
+    AddressPoint? startLocation,
+    List<DirectionLegStep>? steps,
     List<dynamic>? trafficSpeedEntry,
     List<dynamic>? viaWaypoint,
   }) =>
-      Leg(
+      DirectionRouteLeg(
         distance: distance ?? this.distance,
         duration: duration ?? this.duration,
         endAddress: endAddress ?? this.endAddress,

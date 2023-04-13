@@ -3,13 +3,13 @@ import 'dart:convert';
 import 'package:google_maps_directions/src/exceptions/exception.dart';
 import 'package:http/http.dart' as http;
 
+import '../models/address_point.dart';
 import '../models/directions.dart';
-import '../models/point.dart';
 
 class DirectionsRepository {
   Future<Directions> get({
-    required Point origin,
-    required Point destination,
+    required AddressPoint origin,
+    required AddressPoint destination,
     required String googleAPIKey,
     String? language,
     String? mode, //driving, walking, bicycling, transit

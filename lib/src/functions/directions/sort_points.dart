@@ -1,4 +1,4 @@
-import '../../models/point_mixin.dart';
+import '../../models/address_point_mixin.dart';
 import '../computation/distance.dart';
 
 ///Sort list of points from their distance to one point (ascendant or descendant)
@@ -16,7 +16,7 @@ import '../computation/distance.dart';
 ///List<LatLng> pointsSorted = await gmd.sort(origin.lat, origin.lng, points);//by the closest from origin
 /// ```
 /// {@end-tool}
-Future<List<T>> sort<T extends PointMixin>(
+Future<List<T>> sort<T extends AddressPointMixin>(
   double originLat,
   double originLng,
   List<T> points, {
@@ -45,7 +45,7 @@ Future<List<T>> sort<T extends PointMixin>(
   return (asc ? distances : distances.reversed).map((pd) => pd.point).toList();
 }
 
-class _PointDistance<T extends PointMixin> {
+class _PointDistance<T extends AddressPointMixin> {
   _PointDistance(this.point, this.distance);
 
   final int distance;

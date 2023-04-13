@@ -1,12 +1,13 @@
 import 'package:equatable/equatable.dart';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-class LegPolyline extends Equatable {
-  const LegPolyline({
+class DirectionLegPolyline extends Equatable {
+  const DirectionLegPolyline({
     required this.points,
   });
 
-  factory LegPolyline.fromJson(Map<String, dynamic> json) => LegPolyline(
+  factory DirectionLegPolyline.fromJson(Map<String, dynamic> json) =>
+      DirectionLegPolyline(
         points: json["points"],
       );
 
@@ -18,10 +19,10 @@ class LegPolyline extends Equatable {
   @override
   bool get stringify => true;
 
-  LegPolyline copyWith({
+  DirectionLegPolyline copyWith({
     String? points,
   }) =>
-      LegPolyline(
+      DirectionLegPolyline(
         points: points ?? this.points,
       );
 
