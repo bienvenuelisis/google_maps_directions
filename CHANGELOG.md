@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.3+1
+
+* Complete package documentation.
+
 ## 0.0.3
 
 * **BREAKING**: Rename GoogleMapsDistance to GoogleMapsDirections.
