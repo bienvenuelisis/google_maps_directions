@@ -1,6 +1,6 @@
 name: google_maps_directions
 description: Calculate distances, durations & Get shortest route/leg between two points.
-version: 0.0.3+1
+version: 0.0.3+2
 homepage: https://github.com/bienvenuelisis/google_maps_directions
 repository: https://github.com/bienvenuelisis/google_maps_directions
 issue_tracker: https://github.com/bienvenuelisis/google_maps_directions/issues

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.3+2
+
+* Update example : add icons indications about steps.
+
 ## 0.0.3+1
 
 * Complete package documentation.
