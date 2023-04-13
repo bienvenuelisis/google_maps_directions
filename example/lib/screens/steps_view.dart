@@ -88,7 +88,7 @@ class _StepListTile extends StatelessWidget {
     return Column(
       children: [
         ListTile(
-          leading: const Icon(Icons.drive_eta, size: 27),
+          leading: _NavigationIcon(step.maneuver ?? ""),
           title: HtmlWidget(step.htmlInstructions),
           /* title: Text(
             parse(step.htmlInstructions).body!.text,
@@ -100,5 +100,32 @@ class _StepListTile extends StatelessWidget {
         const Divider(color: Colors.grey, thickness: 1.5).padBottom(6),
       ],
     );
+  }
+}
+
+class _NavigationIcon extends StatelessWidget {
+  const _NavigationIcon(this.indication);
+
+  final String indication;
+
+  @override
+  Widget build(BuildContext context) {
+    if (indication.contains("turn-right")) {
+      return const Icon(Icons.turn_right, size: 27);
+    }
+
+    if (indication.contains("roundabout-right")) {
+      return const Icon(Icons.roundabout_right, size: 27);
+    }
+
+    if (indication.contains("turn-left")) {
+      return const Icon(Icons.turn_left, size: 27);
+    }
+
+    if (indication.contains("roundabout-left")) {
+      return const Icon(Icons.roundabout_left, size: 27);
+    }
+
+    return const Icon(Icons.drive_eta, size: 27);
   }
 }
