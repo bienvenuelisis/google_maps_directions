@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.3
+
+* **BREAKING**: Rename GoogleMapsDistance to GoogleMapsDirections.
+* **BREAKING**: Rename DistanceException to DirectionsException.
+
 ## 0.0.2
 
 * Remove flutter as dependency.
