@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.3+3
+
+* Add distance and durations to example steps_view page.
+
 ## 0.0.3+2
 
 * Update example : add icons indications about steps.
