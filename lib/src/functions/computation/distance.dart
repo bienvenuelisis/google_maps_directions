@@ -4,14 +4,14 @@ import '../../models/distance_value.dart';
 
 ///Get the shortest distance according to Google Maps between this two points.
 ///
-///@throw [DistanceException].
+///@throw [DirectionsException].
 ///
 /// Example:
 ///
 /// ```dart
-/// import "package:google_maps_directions/google_maps_directions.dart" as gmp;
+/// import "package:google_maps_directions/google_maps_directions.dart" as gmd;
 ///
-/// int distanceMeters = await gmp.distanceInMeters(9.2460524, 1.2144565, 6.1271617, 1.2345417);
+/// int distanceMeters = await gmd.distanceInMeters(9.2460524, 1.2144565, 6.1271617, 1.2345417);
 /// print(distance.meters);//373240
 /// print(distance.text);//"373 km"
 /// ```
@@ -35,14 +35,14 @@ Future<DistanceValue> distance(
 
 ///Get the shortest distance (in meters) according to Google Maps between this two points.
 ///
-///@throw [DistanceException].
+///@throw [DirectionsException].
 ///
 /// Example:
 ///
 /// ```dart
-/// import "package:google_maps_directions/google_maps_directions.dart" as gmp;
+/// import "package:google_maps_directions/google_maps_directions.dart" as gmd;
 ///
-/// int distanceMeters = await gmp.distanceInMeters(9.2460524, 1.2144565, 6.1271617, 1.2345417);
+/// int distanceMeters = await gmd.distanceInMeters(9.2460524, 1.2144565, 6.1271617, 1.2345417);
 /// print(distance);//373240
 /// ```
 /// {@end-tool}
@@ -65,16 +65,16 @@ Future<int> distanceInMeters(
 
 ///Get the shortest route distance (text) according to Google Maps between this two points.
 ///
-///@throw [DistanceException].
+///@throw [DirectionsException].
 ///
 /// {@tool snippet}
 ///
 /// Example:
 ///
 /// ```dart
-/// import "package:google_maps_directions/google_maps_directions.dart" as gmp;
+/// import "package:google_maps_directions/google_maps_directions.dart" as gmd;
 ///
-/// String textInKmOrMeters = await gmp.distanceText(9.2460524, 1.2144565, 6.1271617, 1.2345417);
+/// String textInKmOrMeters = await gmd.distanceText(9.2460524, 1.2144565, 6.1271617, 1.2345417);
 /// print(textInKmOrMeters);//"373 km"
 /// ```
 /// {@end-tool}

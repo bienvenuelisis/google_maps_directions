@@ -3,17 +3,17 @@ import '../computation/distance.dart';
 
 ///Sort list of points from their distance to one point (ascendant or descendant)
 ///
-///@throw [DistanceException].
+///@throw [DirectionsException].
 ///
 ///
 /// Example:
 ///
 /// ```dart
-/// import "package:google_maps_directions/google_maps_directions.dart" as gmp;
+/// import "package:google_maps_directions/google_maps_directions.dart" as gmd;
 ///
 ///List<LatLng> points = [LatLng(9.2460524, 1.2144565), LatLng(9.53535, 1.435353)];
 ///LatLng origin = LatLng(9.334344, 1.34347343);
-///List<LatLng> pointsSorted = await gmp.sort(origin.lat, origin.lng, points);//by the closest from origin
+///List<LatLng> pointsSorted = await gmd.sort(origin.lat, origin.lng, points);//by the closest from origin
 /// ```
 /// {@end-tool}
 Future<List<T>> sort<T extends PointMixin>(

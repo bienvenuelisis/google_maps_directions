@@ -1,11 +1,11 @@
-import 'package:google_maps_directions/src/gmp.dart';
+import 'package:google_maps_directions/src/gmd.dart';
 
 import '../../models/route.dart';
 import 'get_directions.dart';
 
 ///Get the shortest route according to Google Maps between this two points.
 ///
-///@throw [DistanceException].
+///@throw [DirectionsException].
 Future<Route> shortestRoute(
   double lat1,
   double lng1,
@@ -18,7 +18,7 @@ Future<Route> shortestRoute(
     lng1,
     lat2,
     lng2,
-    googleAPIKey: googleAPIKey ?? GoogleMapsDistance.googleApiKey,
+    googleAPIKey: googleAPIKey ?? GoogleMapsDirections.googleApiKey,
   ))
       .shortestRoute;
 }

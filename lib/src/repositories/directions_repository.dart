@@ -34,7 +34,7 @@ class DirectionsRepository {
       dynamic json = jsonDecode(response.body);
       if (json["status"] == "OK") {
         if ((json["routes"] as List).isEmpty) {
-          throw DistanceException(
+          throw DirectionsException(
             status: json["status"],
             message: json["error_message"],
             description: "No routes between this two points.",
@@ -43,13 +43,13 @@ class DirectionsRepository {
           return Directions.fromJson(json);
         }
       } else {
-        throw DistanceException(
+        throw DirectionsException(
           status: json["status"],
           message: json["error_message"],
         );
       }
     } else {
-      throw DistanceException(
+      throw DirectionsException(
         status: response.statusCode.toString(),
         message: response.body,
       );

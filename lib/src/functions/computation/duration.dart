@@ -3,14 +3,14 @@ import '../directions/shortest_leg.dart';
 
 ///Get the shortest route leg duration according to Google Maps between this two points.
 ///
-///@throw [DistanceException].
+///@throw [DirectionsException].
 ///
 /// Example:
 ///
 /// ```dart
-/// import "package:google_maps_directions/google_maps_directions.dart" as gmp;
+/// import "package:google_maps_directions/google_maps_directions.dart" as gmd;
 ///
-/// int duration = await gmp.duration(9.2460524, 1.2144565, 6.1271617, 1.2345417);
+/// int duration = await gmd.duration(9.2460524, 1.2144565, 6.1271617, 1.2345417);
 /// print(duration.seconds);//12051
 /// print(duration.text);//"3 hours 21 mins"
 /// ```
@@ -34,14 +34,14 @@ Future<DurationValue> duration(
 
 ///Get the shortest route leg duration in seconds according to Google Maps between this two points.
 ///
-///@throw [DistanceException].
+///@throw [DirectionsException].
 ///
 /// Example:
 ///
 /// ```dart
-/// import "package:google_maps_directions/google_maps_directions.dart" as gmp;
+/// import "package:google_maps_directions/google_maps_directions.dart" as gmd;
 ///
-/// int durationSeconds = await gmp.durationInSeconds(9.2460524, 1.2144565, 6.1271617, 1.2345417);
+/// int durationSeconds = await gmd.durationInSeconds(9.2460524, 1.2144565, 6.1271617, 1.2345417);
 /// print(durationSeconds);//12051
 /// ```
 /// {@end-tool}
@@ -64,14 +64,14 @@ Future<int> durationInSeconds(
 
 ///Get the shortest route duration as a text according to Google Maps between this two points.
 ///
-///@throw [DistanceException].
+///@throw [DirectionsException].
 ///
 /// Example:
 ///
 /// ```dart
-/// import "package:google_maps_directions/google_maps_directions.dart" as gmp;
+/// import "package:google_maps_directions/google_maps_directions.dart" as gmd;
 ///
-/// int durationText = await gmp.durationText(9.2460524, 1.2144565, 6.1271617, 1.2345417);
+/// int durationText = await gmd.durationText(9.2460524, 1.2144565, 6.1271617, 1.2345417);
 /// print(durationText);//"3 hours 21 mins"
 /// ```
 /// {@end-tool}

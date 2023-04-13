@@ -1,6 +1,6 @@
 ///Custom class for exceptions.
-class DistanceException implements Exception {
-  DistanceException({
+class DirectionsException implements Exception {
+  DirectionsException({
     required this.status,
     required this.message,
     this.description,

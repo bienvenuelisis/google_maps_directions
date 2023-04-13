@@ -136,7 +136,7 @@ class _DistanceBetweenTwoPointsState extends State<_DistanceBetweenTwoPoints> {
 
   Future<void> _setupApiKeys() async {
     _googleAPiKey = await googleAPIKey();
-    GoogleMapsDistance.init(googleAPIKey: _googleAPiKey ?? "");
+    GoogleMapsDirections.init(googleAPIKey: _googleAPiKey ?? "");
     setState(() {});
   }
 

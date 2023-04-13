@@ -4,7 +4,7 @@ import '../../models/leg.dart';
 
 ///Get the shortest route leg according to Google Maps between this two points.
 ///
-///@throw [DistanceException].
+///@throw [DirectionsException].
 Future<Leg> shortestLeg(
   double lat1,
   double lng1,

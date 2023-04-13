@@ -34,29 +34,29 @@ const String googleAPIKey = "GOOGLE_API_KEY";
 
 //You can init the Package with this API_Key so you don't have to pass it as an argument to it's methods.
 
-GoogleMapsDistance.init(googleAPIKey: googleAPIKey);
+GoogleMapsDirections.init(googleAPIKey: googleAPIKey);
 ```
 
 ### Distance
 
 ```dart
-import "package:google_maps_directions/google_maps_directions.dart" as gmp;
+import "package:google_maps_directions/google_maps_directions.dart" as gmd;
 
-DistanceValue distanceBetween = await gmp.distance(9.2460524, 1.2144565, 6.1271617, 1.2345417, googleAPIKey : googleAPIKey); //gmp.distance(9.2460524, 1.2144565, 6.1271617, 1.2345417) or without passing the API_KEY if the plugin is already initialized with it's value.
+DistanceValue distanceBetween = await gmd.distance(9.2460524, 1.2144565, 6.1271617, 1.2345417, googleAPIKey : googleAPIKey); //gmd.distance(9.2460524, 1.2144565, 6.1271617, 1.2345417) or without passing the API_KEY if the plugin is already initialized with it's value.
 
-int meters = distanceBetween.meters // await gmp.distanceInMeters(9.2460524, 1.2144565, 6.1271617, 1.2345417, googleAPIKey : googleAPIKey);
+int meters = distanceBetween.meters // await gmd.distanceInMeters(9.2460524, 1.2144565, 6.1271617, 1.2345417, googleAPIKey : googleAPIKey);
 
-String textInKmOrMeters = distanceBetween.text // await gmp.distanceText(9.2460524, 1.2144565, 6.1271617, 1.2345417, googleAPIKey : googleAPIKey);
+String textInKmOrMeters = distanceBetween.text // await gmd.distanceText(9.2460524, 1.2144565, 6.1271617, 1.2345417, googleAPIKey : googleAPIKey);
 ```
 
 ### Duration
 
 ```dart
-import "package:google_maps_directions/google_maps_directions.dart" as gmp;
+import "package:google_maps_directions/google_maps_directions.dart" as gmd;
 
-DurationValue durationBetween = await gmp.duration(9.2460524, 1.2144565, 6.1271617, 1.2345417, googleAPIKey : googleAPIKey);
+DurationValue durationBetween = await gmd.duration(9.2460524, 1.2144565, 6.1271617, 1.2345417, googleAPIKey : googleAPIKey);
 
-int seconds = durationBetween.seconds//await gmp.durationInSeconds(9.2460524, 1.2144565, 6.1271617, 1.2345417, googleAPIKey : googleAPIKey);
+int seconds = durationBetween.seconds//await gmd.durationInSeconds(9.2460524, 1.2144565, 6.1271617, 1.2345417, googleAPIKey : googleAPIKey);
 
-String durationInMinutesOrHours = gmp.durationBetween.text // await gmp.durationText(9.2460524, 1.2144565, 6.1271617, 1.2345417, googleAPIKey : googleAPIKey);
+String durationInMinutesOrHours = gmd.durationBetween.text // await gmd.durationText(9.2460524, 1.2144565, 6.1271617, 1.2345417, googleAPIKey : googleAPIKey);
 ```

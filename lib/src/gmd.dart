@@ -1,11 +1,11 @@
 import 'exceptions/exception.dart';
 
-class GoogleMapsDistance {
+class GoogleMapsDirections {
   static String? _googleAPIKey;
 
   static String get googleApiKey {
     if (_googleAPIKey == null) {
-      throw DistanceException(
+      throw DirectionsException(
         status: "invalid-api-key",
         message: "Invalid api key or not set",
       );
