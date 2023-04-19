@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.3+4
+
+* Extend support dart version to 2.18 (Aug 30 2022).
+
 ## 0.0.3+3
 
 * Add distance and durations to example steps_view page.
