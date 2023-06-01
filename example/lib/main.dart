@@ -383,8 +383,8 @@ class _DistanceBetweenTwoPointsState extends State<_DistanceBetweenTwoPoints> {
                                       shape: const StadiumBorder(),
                                     ),
                                     onPressed: null,
-                                    child: Row(
-                                      children: const [
+                                    child: const Row(
+                                      children: [
                                         Icon(
                                           Icons
                                               .keyboard_double_arrow_right_outlined,
@@ -411,12 +411,12 @@ class _DistanceBetweenTwoPointsState extends State<_DistanceBetweenTwoPoints> {
                                       context,
                                       RouteStepsView(route: shortestRoute),
                                     ),
-                                    child: Row(
+                                    child: const Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceAround,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
-                                      children: const [
+                                      children: [
                                         Icon(
                                           Icons.list,
                                           color: Colors.white,
@@ -438,8 +438,8 @@ class _DistanceBetweenTwoPointsState extends State<_DistanceBetweenTwoPoints> {
                                       shape: const StadiumBorder(),
                                     ),
                                     onPressed: null,
-                                    child: Row(
-                                      children: const [
+                                    child: const Row(
+                                      children: [
                                         Icon(
                                           CupertinoIcons.pin,
                                           size: 15,
