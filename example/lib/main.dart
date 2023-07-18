@@ -4,7 +4,7 @@ import 'package:example/utils/extensions/context.dart';
 import 'package:example/utils/navigation/helper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_polyline_points/flutter_polyline_points.dart';
+import 'package:flutter_polyline_points_plus/flutter_polyline_points_plus.dart';
 import 'package:google_maps_directions/google_maps_directions.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 

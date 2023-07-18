@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.3+5
+
+* Upgrade http package from 0.13.5 to 1.1.0.
+* Migrate in example projet from flutter_polyline_points (not maintened) package to flutter_polyline_points_plus.
+
 ## 0.0.3+4
 
 * Extend support dart version to 2.18 (Aug 30 2022).
